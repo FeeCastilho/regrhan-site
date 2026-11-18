@@ -1,0 +1,74 @@
+{
+  "redirects": [
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/area-restrita/",
+      "destination": "https://hub.metadata.net/",
+      "permanent": true
+    },
+    {
+      "source": "/quem-somos/",
+      "destination": "/quem-somos.html",
+      "permanent": true
+    },
+    {
+      "source": "/ativos/",
+      "destination": "/ativos.html",
+      "permanent": true
+    },
+    {
+      "source": "/gestao-de-fornecedores/",
+      "destination": "/gestao-de-fornecedores.html",
+      "permanent": true
+    },
+    {
+      "source": "/gestao-documental-de-subcontratados-e-terceiros/",
+      "destination": "/gestao-documental-de-subcontratados-e-terceiros.html",
+      "permanent": true
+    },
+    {
+      "source": "/autorizacao-de-acesso-de-terceiros/",
+      "destination": "/autorizacao-de-acesso-de-terceiros.html",
+      "permanent": true
+    },
+    {
+      "source": "/gerenciamento-de-visitantes/",
+      "destination": "/gerenciamento-de-visitantes.html",
+      "permanent": true
+    },
+    {
+      "source": "/homologacao-de-fornecedores/",
+      "destination": "/homologacao-de-fornecedores.html",
+      "permanent": true
+    },
+    {
+      "source": "/terceirize-servicos-de-profissionais-qualificados/",
+      "destination": "/terceirize-servicos-de-profissionais-qualificados.html",
+      "permanent": true
+    },
+    {
+      "source": "/fale-conosco/",
+      "destination": "/fale-conosco.html",
+      "permanent": true
+    },
+    {
+      "source": "/trabalhe-conosco/",
+      "destination": "/trabalhe-conosco.html",
+      "permanent": true
+    },
+    {
+      "source": "/faq/",
+      "destination": "/faq.html",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-privacidade/",
+      "destination": "/politica-de-privacidade.html",
+      "permanent": true
+    }
+  ]
+}

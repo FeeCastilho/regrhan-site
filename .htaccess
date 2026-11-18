@@ -1,0 +1,5 @@
+# Enderecos do site antigo (com barra no final) apontando para as paginas novas
+RewriteEngine On
+RewriteRule ^home/?$ / [R=301,L]
+RewriteRule ^area-restrita/?$ https://hub.metadata.net/ [R=301,L]
+RewriteRule ^(quem-somos|ativos|gestao-de-fornecedores|gestao-documental-de-subcontratados-e-terceiros|autorizacao-de-acesso-de-terceiros|gerenciamento-de-visitantes|homologacao-de-fornecedores|terceirize-servicos-de-profissionais-qualificados|fale-conosco|trabalhe-conosco|faq|politica-de-privacidade)/?$ /$1.html [R=301,L]
