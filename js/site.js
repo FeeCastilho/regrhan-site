@@ -415,14 +415,15 @@
   });
 })();
 
-/* pausar o video da hero */
+/* pausar a animacao da hero */
 (() => {
-  const btn = document.querySelector('.hv-pause'); const vid = document.querySelector('.hv-media video');
-  if (!btn || !vid) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { vid.removeAttribute('autoplay'); vid.pause(); btn.hidden = true; return; }
+  const btn = document.querySelector('.hv-pause');
+  if (!btn) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { btn.hidden = true; return; }
   btn.addEventListener('click', () => {
-    const pause = !vid.paused;
-    pause ? vid.pause() : vid.play();
+    const a = window.heroAnim; if (!a) return;
+    const pause = !a.paused;
+    pause ? a.pause() : a.play();
     btn.setAttribute('aria-pressed', String(pause));
     btn.textContent = pause ? 'Retomar animação' : 'Pausar animação';
   });
