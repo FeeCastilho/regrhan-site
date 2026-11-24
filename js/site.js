@@ -148,6 +148,31 @@
   }
 
 
+
+  /* home: soluções compactas (abrem no hover, no foco e no toque) */
+  document.querySelectorAll('.sol-tile').forEach((t) => {
+    const b = t.querySelector('.sol-btn');
+    if (!b) return;
+    b.addEventListener('click', () => {
+      const on = !t.classList.contains('open');
+      document.querySelectorAll('.sol-tile.open').forEach((o) => { o.classList.remove('open'); o.querySelector('.sol-btn').setAttribute('aria-expanded', 'false'); });
+      if (on) { t.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  /* mapa por região: passar o mouse (ou tocar) pinta a região inteira, sem clique */
+  document.querySelectorAll('[data-regions]').forEach((root) => {
+    const set = (r) => { if (r) root.dataset.hot = r; else delete root.dataset.hot; };
+    root.querySelectorAll('[data-region], path[data-r]').forEach((el) => {
+      const r = el.dataset.region || el.dataset.r;
+      el.addEventListener('mouseenter', () => set(r));
+      el.addEventListener('mouseleave', () => set(null));
+      el.addEventListener('focus', () => set(r));
+      el.addEventListener('blur', () => set(null));
+      el.addEventListener('click', () => set(r));
+    });
+  });
+
   /* ativos: interactive map, regions light their pins up one by one */
   document.querySelectorAll('[data-atlas-root]').forEach((root) => {
     const map = root.querySelector('.atlas-map');
@@ -379,7 +404,7 @@
       const lines = [];
       for (const [k, v] of data.entries()) if (String(v).trim()) lines.push(`${k}: ${v}`);
       const subject = f.dataset.subject + (data.get('Empresa') ? ` · ${data.get('Empresa')}` : data.get('Nome') ? ` · ${data.get('Nome')}` : '');
-      const href = `mailto:comercial@regrhan.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+      const href = `mailto:${document.documentElement.dataset.email || 'comercial@regrhan.com'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
       const done = f.parentElement.querySelector('.form-done');
       if (done) { done.setAttribute('data-show', ''); done.focus(); }
       window.location.href = href;
