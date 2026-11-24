@@ -1976,3 +1976,9 @@ html, body { overflow-x: clip; }
   .como .doc { padding: .7rem .7rem; gap: .6rem; }
   .como .doc small { display: none; }
 }
+
+/* botões brancos em fundo escuro: o preenchimento que sobe é claro, o texto continua navy */
+.on-deep .button:not(.button--ink), .on-accent .button:not(.button--ink), .hero--navy .button:not(.head-cta), .hero--vid .button:not(.head-cta), .button--light { --sweep: #d9e1f0; }
+@media (hover: hover) and (pointer: fine) {
+  .on-deep .button:not(.button--ink):hover, .on-accent .button:not(.button--ink):hover, .hero--navy .button:not(.head-cta):hover, .hero--vid .button:not(.head-cta):hover, .button--light:hover { color: var(--navy); }
+}
